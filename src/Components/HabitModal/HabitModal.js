@@ -2,17 +2,11 @@ import {useContext,useState,useEffect} from "react";
 import "./habitModal.css"
 import {DataProvider} from "../../Context/DataProvider"
 
-const DEFAULT_HABIT = {
-    name:'',
-    repeatCycle:'daily',
-    goal:'once',
-    time:'',
-    startDate:'',
-}
+
 export default function HabitsModal({showHabitModal}){
 
-    const {addNewHabit}=useContext(DataProvider)
-    const [habit,setHabit]=useState(DEFAULT_HABIT)
+    const {addNewHabit,curEditingHabit}=useContext(DataProvider)
+    const [habit,setHabit]=useState(curEditingHabit)
 
     const handleHabitChange=(e,keyName)=>{
         const habitInfo={...habit}
@@ -58,7 +52,7 @@ export default function HabitsModal({showHabitModal}){
 
                     </div>
                     <div>
-                        <button onClick={()=>{setHabit(DEFAULT_HABIT)
+                        <button onClick={()=>{
                             showHabitModal()}}>Discard</button>
                         <button onClick={()=>{addNewHabit(habit)
                             showHabitModal()
