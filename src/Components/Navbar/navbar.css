@@ -1,0 +1,14 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 20%;
+    background-color: darkseagreen;
+    padding: 20px;
+}
+.addBtn{
+    background-color: darkgoldenrod;
+    padding: 10px;
+    border-radius: 5px;
+
+}
